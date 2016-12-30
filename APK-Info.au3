@@ -1,6 +1,6 @@
-#region ;**** ≤Œ ˝¥¥Ω®”⁄ ACNWrapper_GUI ****
+#region ;**** ÂèÇÊï∞ÂàõÂª∫‰∫é ACNWrapper_GUI ****
 #AutoIt3Wrapper_Icon=APK-Info.ico
-#AutoIt3Wrapper_Outfile=C:\Users\Administrator\Desktop\APK-Info.exe
+#AutoIt3Wrapper_Outfile=APK-Info.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_UseX64=n
 #AutoIt3Wrapper_Res_Comment=Shows info about Android Package Files (APK)
@@ -8,9 +8,7 @@
 #AutoIt3Wrapper_Res_Fileversion=0.4.0.0
 #AutoIt3Wrapper_Res_LegalCopyright=zoster
 #AutoIt3Wrapper_Run_Tidy=y
-#AutoIt3Wrapper_Run_Obfuscator=y
-#Obfuscator_Parameters=123
-#endregion ;**** ≤Œ ˝¥¥Ω®”⁄ ACNWrapper_GUI ****
+#endregion ;**** ÂèÇÊï∞ÂàõÂª∫‰∫é ACNWrapper_GUI ****
 #region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #endregion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #include <EditConstants.au3>
@@ -266,6 +264,20 @@ EndFunc   ;==>_openPlay
 Func _translateSDKLevel($prmSDKLevel, $prmReturnCodeName = False)
 
 	Switch String($prmSDKLevel)
+		;You can see uses-sdk on "https://developer.android.com/guide/topics/manifest/uses-sdk-element.html"
+		;or "https://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+		Case "23"
+			$sVersion = "6.0"
+			$sCodeName = "Marshmallow"
+		Case "22"
+			$sVersion = "5.1"
+			$sCodeName = "Lollipop MR1"
+		Case "21"
+			$sVersion = "5.0"
+			$sCodeName = "Lollipop"
+		Case "20"
+			$sVersion = "4.4W"
+			$sCodeName = "Kitkat Watch"
 		Case "19"
 			$sVersion = "4.4"
 			$sCodeName = "KitKat"

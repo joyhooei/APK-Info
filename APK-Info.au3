@@ -1,4 +1,4 @@
-#region ;**** 参数创建于 ACNWrapper_GUI ****
+#region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Icon=APK-Info.ico
 #AutoIt3Wrapper_Outfile=APK-Info.exe
 #AutoIt3Wrapper_UseUpx=n
@@ -8,9 +8,8 @@
 #AutoIt3Wrapper_Res_Fileversion=0.4.0.0
 #AutoIt3Wrapper_Res_LegalCopyright=zoster
 #AutoIt3Wrapper_Run_Tidy=y
-#endregion ;**** 参数创建于 ACNWrapper_GUI ****
-#region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #endregion ;**** Directives created by AutoIt3Wrapper_GUI ****
+
 #include <EditConstants.au3>
 #include <GUIConstantsEx.au3>
 #include <StaticConstants.au3>
@@ -265,7 +264,13 @@ Func _translateSDKLevel($prmSDKLevel, $prmReturnCodeName = False)
 
 	Switch String($prmSDKLevel)
 		;You can see uses-sdk on "https://developer.android.com/guide/topics/manifest/uses-sdk-element.html"
-		;or "https://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+		;and "https://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+		Case "25"
+			$sVersion = "7.1"
+			$sCodeName = "Nougat MR1"
+		Case "24"
+			$sVersion = "7.0"
+			$sCodeName = "Nougat"
 		Case "23"
 			$sVersion = "6.0"
 			$sCodeName = "Marshmallow"
@@ -335,9 +340,6 @@ Func _translateSDKLevel($prmSDKLevel, $prmReturnCodeName = False)
 		Case "1"
 			$sVersion = "1.0"
 			$sCodeName = "Base"
-		Case "10000"
-			$sVersion = "Cur_Dev"
-			$sCodeName = "Current Dev. Build"
 		Case Else
 			$sVersion = "Unknown"
 			$sCodeName = "Unknown"
